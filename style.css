@@ -36,7 +36,15 @@
     letter-spacing: -0.02em;
     color: var(--ink);
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
+.logo img {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
   .logo span { color: var(--accent); }
 
   .nav-links {
