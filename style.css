@@ -36,8 +36,8 @@
     letter-spacing: -0.02em;
     color: var(--ink);
     text-decoration: none;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
   }
   .logo span { color: var(--accent); }
