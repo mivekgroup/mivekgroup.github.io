@@ -16,13 +16,26 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Privacy Policy | Mivek Group</title>
+  <script>
+    (function () {
+      var saved = localStorage.getItem('mivek-theme') || 'auto';
+      var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.themeChoice = saved;
+      document.documentElement.dataset.theme = saved === 'auto' ? (dark ? 'dark' : 'light') : saved;
+    }());
+  </script>
+  <script src="theme.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Mivek Group home"><img src="favicon%20187*100.png" alt="Mivek Group"></a>
+    <a class="brand" href="index.html" aria-label="Mivek Group home"><img src="favicon%20187*100.png" width="187" height="100" decoding="async" alt="Mivek Group"></a>
     <nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html#about">About</a><a href="index.html#companies">Our Companies</a><a href="index.html#experience">Experience</a><a class="nav-button" href="index.html#contact">Contact Us</a></nav>
-    <details class="mobile-nav"><summary aria-label="Open navigation menu"><span></span><span></span><span></span></summary><nav aria-label="Mobile navigation"><a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#companies">Our Companies</a><a href="index.html#experience">Experience</a><a class="nav-button" href="index.html#contact">Contact Us</a></nav></details>
+    <div class="theme-switcher" role="group" aria-label="Appearance">
+      <button type="button" class="theme-option" data-theme-option="light" aria-label="Use light mode" title="Light mode"><span aria-hidden="true">☀</span><span class="theme-label">Light</span></button>
+      <button type="button" class="theme-option" data-theme-option="dark" aria-label="Use dark mode" title="Dark mode"><span aria-hidden="true">◐</span><span class="theme-label">Dark</span></button>
+      <button type="button" class="theme-option" data-theme-option="auto" aria-label="Use device theme" title="Auto mode"><span aria-hidden="true">◒</span><span class="theme-label">Auto</span></button>
+    </div><details class="mobile-nav"><summary aria-label="Open navigation menu"><span></span><span></span><span></span></summary><nav aria-label="Mobile navigation"><a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#companies">Our Companies</a><a href="index.html#experience">Experience</a><a class="nav-button" href="index.html#contact">Contact Us</a></nav></details>
   </header>
 
   <main class="legal-main" id="main-content">
@@ -72,7 +85,7 @@
       <p>We may update this policy from time to time. Changes will be posted on this page with an updated revision date.</p>
 
       <h2>11. Contact Us</h2>
-      <p><strong>Email:</strong> <a href="mailto:info@mivekgroup.com">info@mivekgroup.com</a><br><strong>Phone:</strong> <a href="tel:+254713974240">+254 713 974 240</a><br><strong>Address:</strong> P.O. Box 833 - 60200, Meru, Kenya</p>
+      <p><strong>Email:</strong> <a href="mailto:info@mivekgroup.com">info@mivekgroup.com</a><br><strong>Phone:</strong> <a href="tel:+254713974240">+254 713 974 240</a><br><strong>Physical address:</strong> Njuri Ncheke Street, Meru, Kenya<br><strong>Postal address:</strong> P.O. BOX 833 - 60200</p>
 
       <h2>12. Consent</h2>
       <p>By using our services, you consent to the terms of this Privacy Policy.</p>
@@ -80,7 +93,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-top"><a class="brand footer-brand" href="index.html" aria-label="Mivek Group home"><img src="favicon%20187*100.png" alt="Mivek Group"></a><p>Building value across industries through focused companies and dependable service.</p><a class="button button-primary" href="index.html#contact">Contact Us</a></div>
+    <div class="footer-top"><a class="brand footer-brand" href="index.html" aria-label="Mivek Group home"><img src="favicon%20187*100.png" width="187" height="100" decoding="async" alt="Mivek Group"></a><p>Building value across industries through focused companies and dependable service.</p><a class="button button-primary" href="index.html#contact">Contact Us</a></div>
     <div class="footer-bottom"><p>© 2026 Mivek Group. All rights reserved.</p><p><a href="terms-of-use.html">Terms of Use</a></p></div>
   </footer>
 </body>

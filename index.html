@@ -31,7 +31,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness"],
     "name": "Mivek Group",
     "url": "https://mivekgroup.github.io/",
     "logo": "https://mivekgroup.github.io/favicon-mivek-512x512.png",
@@ -52,8 +52,23 @@
       "@type": "PostalAddress",
       "streetAddress": "Njuri Ncheke Street",
       "addressLocality": "Meru",
+      "postOfficeBoxNumber": "P.O. BOX 833 - 60200",
       "addressCountry": "KE"
     },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "12:30"
+      }
+    ],
     "subOrganization": [
       {"@type": "Organization", "name": "Mivek Solutions", "url": "https://mivekgroup.github.io/mivek-solutions.html"},
       {"@type": "Organization", "name": "Mivek Groceries", "url": "https://mivekgroup.github.io/mivek-groceries.html"},
@@ -64,13 +79,22 @@
     ]
   }
   </script>
+  <script>
+    (function () {
+      var saved = localStorage.getItem('mivek-theme') || 'auto';
+      var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.themeChoice = saved;
+      document.documentElement.dataset.theme = saved === 'auto' ? (dark ? 'dark' : 'light') : saved;
+    }());
+  </script>
+  <script src="theme.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Mivek Group home">
-      <img src="favicon%20187*100.png" alt="Mivek Group">
+      <img src="favicon%20187*100.png" width="187" height="100" decoding="async" alt="Mivek Group">
     </a>
 
     <nav class="desktop-nav" aria-label="Primary navigation">
@@ -79,11 +103,15 @@
       <a href="#why-mivek">Why Mivek</a>
       <a href="#work">Our Work</a>
       <a href="#experience">Experience</a>
-      <a href="#careers">Careers</a>
+      <a href="#company-information">Company Info</a>
       <a class="nav-button" href="#contact">Contact Us</a>
     </nav>
 
-    <details class="mobile-nav">
+    <div class="theme-switcher" role="group" aria-label="Appearance">
+      <button type="button" class="theme-option" data-theme-option="light" aria-label="Use light mode" title="Light mode"><span aria-hidden="true">☀</span><span class="theme-label">Light</span></button>
+      <button type="button" class="theme-option" data-theme-option="dark" aria-label="Use dark mode" title="Dark mode"><span aria-hidden="true">◐</span><span class="theme-label">Dark</span></button>
+      <button type="button" class="theme-option" data-theme-option="auto" aria-label="Use device theme" title="Auto mode"><span aria-hidden="true">◒</span><span class="theme-label">Auto</span></button>
+    </div><details class="mobile-nav">
       <summary aria-label="Open navigation menu">
         <span></span><span></span><span></span>
       </summary>
@@ -93,8 +121,8 @@
         <a href="#why-mivek">Why Mivek</a>
         <a href="#work">Our Work</a>
         <a href="#experience">Experience</a>
-        <a href="#careers">Careers</a>
-        <a href="#news">News</a>
+        <a href="#standards">Our Standards</a>
+        <a href="#company-information">Company Information</a>
         <a class="nav-button" href="#contact">Contact Us</a>
       </nav>
     </details>
@@ -134,7 +162,7 @@
           </a>
           <a href="mivek-logistics.html" class="portfolio-card">
             <span class="portfolio-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7zM7 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM17 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg></span>
-            <strong>Mivek Logistics</strong><small>Transportation, delivery, distribution &amp; and fleet coordination.</small>
+            <strong>Mivek Logistics</strong><small>Transportation, delivery, distribution &amp; fleet coordination.</small>
           </a>
           <a href="mivek-properties.html" class="portfolio-card">
             <span class="portfolio-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V4h10v17M14 9h6v12M8 8h2M8 12h2M8 16h2M17 13h1M17 17h1"/></svg></span>
@@ -177,6 +205,32 @@
       </div>
     </section>
 
+    <section class="section credibility" id="standards">
+      <div class="section-intro credibility-intro">
+        <p class="eyebrow"><span></span> Corporate Assurance</p>
+        <h2>Clear structure. Accountable service.</h2>
+        <p>Mivek Group combines defined specialist companies with shared standards for planning, communication, delivery and follow-up.</p>
+      </div>
+      <div class="credibility-grid" aria-label="Mivek Group corporate facts">
+        <article><span>01</span><strong>Six focused companies</strong><p>Each company serves a defined market need while operating within one coordinated group structure.</p></article>
+        <article><span>02</span><strong>Meru-based coordination</strong><p>Group enquiries and service coordination are managed from Njuri Ncheke Street, Meru, Kenya.</p></article>
+        <article><span>03</span><strong>Multi-sector capability</strong><p>Technology, retail, logistics, property, recoveries and energy expertise under one group.</p></article>
+        <article><span>04</span><strong>Defined delivery process</strong><p>Every requirement follows a clear path: understand, plan, deliver and provide relevant follow-up support.</p></article>
+      </div>
+      <div class="credibility-commitment">
+        <div>
+          <p class="eyebrow"><span></span> What Clients Can Expect</p>
+          <h3>Practical communication from enquiry to handover.</h3>
+        </div>
+        <ul>
+          <li><strong>Relevant expertise</strong><span>Enquiries are directed to the Mivek company best suited to the requirement.</span></li>
+          <li><strong>Clear scope</strong><span>Priorities, timing and the operating context are clarified before delivery.</span></li>
+          <li><strong>Coordinated execution</strong><span>Resources and responsibilities are organized around the agreed approach.</span></li>
+          <li><strong>Responsible follow-up</strong><span>Relevant handover and post-delivery support complete the assignment.</span></li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section work-stories" id="work">
       <div class="section-intro">
         <p class="eyebrow"><span></span> Our Work</p>
@@ -197,7 +251,7 @@
           <figcaption><span>Power &amp; energy</span><strong>Dependable systems for evolving energy needs.</strong></figcaption>
         </figure>
       </div>
-      <p class="photo-note">Representative service photography. Images by <a href="https://unsplash.com/@mivekgroup" rel="noopener noreferrer" target="_blank">photograpghy@mivekgroup.com</a>, <a href="https://unsplash.com/@mivekgroup" rel="noopener noreferrer" target="_blank">Mivek Group</a> on Unsplash.</p>
+      <p class="photo-note">Images illustrate the service environments supported by Mivek Group.</p>
     </section>
 
     <section class="section companies" id="companies">
@@ -243,7 +297,7 @@
           <ul><li>Debt recovery support</li><li>Asset tracing</li><li>Recovery consultancy</li><li>Portfolio follow-up</li></ul>
           <a href="mivek-recoveries.html">Explore Mivek Recoveries <span>→</span></a>
         </article>
-        <article class="company-card company-card-accent" id="company-power">
+        <article class="company-card" id="company-power">
           <div class="company-card-top"><span>06</span><p>Energy &amp; Electrical</p></div>
           <h3>Mivek Power</h3>
           <p>Electrical, renewable and backup energy solutions that help clients maintain safe, efficient and dependable power systems.</p>
@@ -286,19 +340,30 @@
       </div>
     </section>
 
-    <section class="section opportunities">
-      <article id="careers">
-        <p class="eyebrow"><span></span> Careers</p>
-        <h2>Build useful work with us.</h2>
-        <p>We welcome interest from people who value integrity, collaboration, quality and practical problem-solving across our industries.</p>
-        <a class="button button-secondary" href="mailto:info@mivekgroup.com?subject=Career%20Interest%20at%20Mivek%20Group">Submit your interest</a>
-      </article>
-      <article id="news">
-        <p class="eyebrow"><span></span> News &amp; Updates</p>
-        <h2>Follow what we are building.</h2>
-        <p>Company announcements, service updates and selected Mivek Group developments will be published here.</p>
-        <a class="button button-secondary" href="mailto:info@mivekgroup.com?subject=Mivek%20Group%20Updates">Request company updates</a>
-      </article>
+    <section class="section corporate-information" id="company-information">
+      <div class="section-intro">
+        <p class="eyebrow"><span></span> Company Information</p>
+        <h2>Essential information in one place.</h2>
+        <p>Use the details below for quotations, supplier onboarding, partnership enquiries and general correspondence.</p>
+      </div>
+      <div class="corporate-information-layout">
+        <dl class="corporate-details">
+          <div><dt>Group name</dt><dd>Mivek Group</dd></div>
+          <div><dt>Business structure</dt><dd>Six focused operating companies</dd></div>
+          <div><dt>Physical office</dt><dd>Njuri Ncheke Street, Meru, Kenya</dd></div>
+          <div><dt>Postal address</dt><dd>P.O. BOX 833 - 60200</dd></div>
+          <div class="corporate-hours"><dt>Operating hours</dt><dd>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 8:00 AM - 12:30 PM</dd></div>
+          <div><dt>Telephone</dt><dd><a href="tel:+254713974240">+254 713 974 240</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:info@mivekgroup.com">info@mivekgroup.com</a></dd></div>
+        </dl>
+        <article class="profile-card">
+          <p class="eyebrow"><span></span> Corporate Document</p>
+          <h3>Mivek Group Company Profile 2026</h3>
+          <p>Review the group structure, portfolio, service capabilities, operating approach and official contact information.</p>
+          <a class="button button-primary" href="Mivek-Group-Company-Profile.pdf" download>Download Company Profile ↓</a>
+          <small>PDF document · 8 pages</small>
+        </article>
+      </div>
     </section>
 
     <section class="contact" id="contact">
@@ -313,6 +378,9 @@
           <a href="tel:+254713974240"><span>Telephone</span><strong>+254 713 974 240</strong><em>Call Mivek Group →</em></a>
           <a href="https://wa.me/254713974240?text=Hello%20Mivek%20Group%2C%20I%27d%20like%20to%20make%20an%20enquiry." rel="noopener noreferrer" target="_blank"><span>WhatsApp</span><strong>Chat with our team</strong><em>Open WhatsApp →</em></a>
           <a href="https://www.google.com/maps/search/?api=1&amp;query=Mivek Group+Njuri+Ncheke+Street+Meru+Kenya" rel="noopener noreferrer" target="_blank"><span>Group Office</span><strong>Njuri Ncheke Street<br>Meru, Kenya</strong><em>View on Google Maps →</em></a>
+          <address><span>Postal Address</span><strong>P.O. BOX 833 - 60200</strong><em>Official correspondence</em></address>
+          <a href="Mivek-Group-Company-Profile.pdf" download><span>Company Profile</span><strong>Group capabilities and structure</strong><em>Download the PDF →</em></a>
+          <address class="contact-hours"><span>Operating Hours</span><strong>Monday - Friday<br>8:00 AM - 5:00 PM</strong><em>Saturday: 8:00 AM - 12:30 PM</em></address>
         </div>
 
         <form class="enquiry-form" id="enquiry-form" aria-describedby="form-note">
@@ -357,17 +425,17 @@
 
   <footer class="site-footer">
     <div class="footer-top">
-      <a class="brand footer-brand" href="#top" aria-label="Mivek Group home"><img src="favicon%20187*100.png" alt="Mivek Group"></a>
+      <a class="brand footer-brand" href="#top" aria-label="Mivek Group home"><img src="favicon%20187*100.png" width="187" height="100" decoding="async" alt="Mivek Group"></a>
       <p>Building value across industries through focused companies and dependable service.</p>
       <a class="button button-primary" href="#contact">Request a Quote</a>
     </div>
     <div class="footer-columns">
-      <div><h2>Group</h2><a href="#about">About</a><a href="#why-mivek">Why Mivek</a><a href="#experience">Delivery Approach</a><a href="#contact">Contact</a></div>
+      <div><h2>Group</h2><a href="#about">About</a><a href="#standards">Our Standards</a><a href="#why-mivek">Why Mivek</a><a href="#experience">Delivery Approach</a><a href="#contact">Contact</a></div>
       <div><h2>Companies</h2><a href="#company-solutions">Mivek Solutions</a><a href="#company-groceries">Mivek Groceries</a><a href="#company-logistics">Mivek Logistics</a></div>
       <div><h2>Companies</h2><a href="#company-properties">Mivek Properties</a><a href="#company-recoveries">Mivek Recoveries</a><a href="#company-power">Mivek Power</a></div>
-      <div><h2>More</h2><a href="Mivek-Group-Company-Profile.pdf" download>Company Profile (PDF)</a><a href="#careers">Careers</a><a href="#news">News &amp; Updates</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></div>
+      <div><h2>More</h2><a href="#company-information">Company Information</a><a href="Mivek-Group-Company-Profile.pdf" download>Company Profile (PDF)</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></div>
     </div>
-    <div class="footer-bottom"><p>© 2026 Mivek Group. All rights reserved.</p><p>Meru, Kenya</p></div>
+    <div class="footer-bottom"><p>© 2026 Mivek Group. All rights reserved.</p><p>Meru, Kenya · Mon - Fri: 8:00 AM - 5:00 PM · Sat: 8:00 AM - 12:30 PM</p></div>
   </footer>
   <script>
     (() => {
