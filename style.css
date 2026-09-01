@@ -1530,3 +1530,175 @@ html[data-theme="dark"] .division-assurance { background: var(--paper); }
 @media (max-width: 640px) {
   .division-assurance-list li { min-height: 140px; grid-template-columns: 42px minmax(0, 1fr); }
 }
+
+/* ============================================================
+   MOBILE SCALE FIX
+   Compact typography, spacing and cards while retaining 44px targets.
+   ============================================================ */
+@media (max-width: 700px) {
+  :root {
+    --page-gutter: max(16px, 4.5vw);
+    --header-height: 70px;
+  }
+
+  [id] { scroll-margin-top: 78px; }
+  body { line-height: 1.52; }
+
+  .site-header,
+  .site-header.is-scrolled {
+    min-height: 70px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    gap: .65rem;
+  }
+  .brand,
+  .brand img { width: 100px; }
+  .theme-switcher { gap: 1px; padding: 3px; }
+  .theme-option {
+    min-width: 30px;
+    width: 30px;
+    min-height: 32px;
+    padding: .35rem;
+    font-size: .68rem;
+  }
+  .mobile-nav { margin-left: .15rem; }
+  .mobile-nav summary { width: 44px; height: 44px; }
+  .mobile-nav nav { inset-block-start: 70px; padding-top: .65rem; padding-bottom: 1rem; }
+  .mobile-nav nav a { min-height: 44px; padding-top: .6rem; padding-bottom: .6rem; }
+
+  .hero {
+    padding-top: 102px;
+    padding-bottom: 48px;
+    gap: 2rem;
+  }
+  .hero h1 { font-size: clamp(2.35rem, 11.8vw, 3.25rem); }
+  .hero-lead { margin-bottom: 1.5rem; font-size: .96rem; line-height: 1.6; }
+  .hero-actions { gap: .6rem; }
+  .button {
+    min-height: 46px;
+    padding: .72rem 1.1rem;
+    font-size: .86rem;
+  }
+  .hero-assurances { margin-top: 1.25rem; gap: .4rem; }
+  .portfolio-panel { padding: .72rem; border-radius: 18px; }
+  .portfolio-heading { padding: .45rem .45rem .85rem; }
+  .portfolio-heading p { font-size: 1.08rem; }
+  .portfolio-card { min-height: 104px; padding: 1rem; border-radius: 14px; }
+  .portfolio-icon { width: 31px; height: 31px; }
+
+  .trust-strip { min-height: 0; padding-top: .9rem; padding-bottom: .9rem; }
+  .trust-strip p { font-size: .68rem; }
+
+  .section,
+  .contact,
+  .division-audience,
+  .division-cta {
+    padding-top: 3.6rem;
+    padding-bottom: 3.6rem;
+  }
+  .section-intro { margin-bottom: 2rem; }
+  .section-intro h2,
+  .why-copy h2,
+  .division-assurance-copy h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(1.9rem, 8.5vw, 2.6rem);
+  }
+  .eyebrow { margin-bottom: .85rem; gap: .55rem; font-size: .68rem; }
+  .eyebrow span { width: 22px; }
+
+  .about { gap: 1.6rem; }
+  .about-copy .large-copy { font-size: 1.2rem; line-height: 1.45; }
+  .values-grid { gap: .65rem; }
+  .values-grid article { min-height: 150px; padding: 1.25rem; }
+  .values-grid h3 { margin-top: 1.45rem; }
+
+  .credibility-grid { gap: .65rem; }
+  .credibility-grid article { min-height: 170px; padding: 1.25rem; }
+  .credibility-grid strong { margin-top: 1.6rem; }
+  .credibility-commitment { padding: 1.4rem; gap: 1.5rem; border-radius: 18px; }
+  .credibility-commitment h3 { font-size: 1.7rem; }
+  .credibility-commitment li { min-height: 0; padding: 1.05rem; }
+
+  .story-grid { gap: .7rem; }
+  .story-card,
+  .story-card-wide { min-height: 280px; border-radius: 16px; }
+  .story-card figcaption { padding: 1.25rem; }
+  .story-card figcaption strong { font-size: 1.08rem; }
+
+  .company-grid { border-radius: 14px; }
+  .company-card { min-height: 390px; padding: 1.5rem; }
+  .company-card h3 { margin: 2rem 0 .8rem; font-size: 1.75rem; }
+  .company-card ul { margin: .9rem 0 1.4rem; gap: .45rem; }
+
+  .why-mivek { gap: 2rem; }
+  .reason-list article { min-height: 0; padding: 1.4rem 0; grid-template-columns: 42px 1fr; }
+  .reason-list h3 { font-size: 1.15rem; }
+
+  .process-grid li { min-height: 205px; padding: 1.3rem; }
+  .process-grid h3 { margin-top: 2.15rem; font-size: 1.2rem; }
+  .sectors-panel { margin-top: 1rem; padding: 1.25rem; border-radius: 16px; }
+  .sectors-panel h3 { font-size: 1.65rem; }
+  .sectors-panel li { min-height: 38px; padding: .55rem .8rem; }
+
+  .corporate-information-layout { gap: .7rem; }
+  .corporate-details > div { min-height: 105px; padding: 1.15rem; }
+  .corporate-details dt { margin-bottom: .9rem; }
+  .corporate-details dd { font-size: 1rem; }
+  .profile-card { min-height: 340px; padding: 1.5rem; border-radius: 16px; }
+  .profile-card h3 { font-size: 1.85rem; }
+
+  .contact-intro { margin-bottom: 2rem; }
+  .contact h2 { font-size: clamp(2rem, 9vw, 2.75rem); }
+  .contact-layout { gap: .7rem; }
+  .contact-grid > * { min-height: 145px; padding: 1.25rem; }
+  .contact-grid strong { margin-top: 1.25rem; font-size: 1.05rem; }
+  .enquiry-form { padding: 1.3rem; }
+  .form-heading h3 { font-size: 1.7rem; }
+  .form-grid { margin-top: 1.25rem; gap: .75rem; }
+  .form-grid input,
+  .form-grid select { min-height: 46px; }
+  .form-grid textarea { min-height: 110px; }
+
+  .site-footer { padding-top: 3rem; padding-bottom: 1.2rem; }
+  .footer-top { padding-bottom: 2rem; gap: 1.4rem; }
+  .footer-brand { width: 118px; }
+  .footer-columns { padding: 2.2rem 0; gap: 1.7rem; row-gap: 1.8rem; }
+
+  .division-page .division-hero {
+    padding-top: 102px;
+    padding-bottom: 48px;
+    gap: 2rem;
+  }
+  .division-page .division-hero h1 { font-size: clamp(2.65rem, 13vw, 3.65rem); }
+  .division-page .division-hero aside { padding: 1.35rem; border-radius: 16px; }
+  .division-page .division-service-grid { gap: .65rem; }
+  .division-page .division-service-grid article { min-height: 185px; padding: 1.35rem; }
+  .division-page .division-service-grid h3 { margin-top: 1.65rem; font-size: 1.15rem; }
+  .division-page .division-audience { gap: 1.8rem; }
+  .division-page .division-audience li { min-height: 58px; padding: .75rem 1rem; }
+  .division-page .division-cta h2 { font-size: clamp(2rem, 9vw, 2.8rem); }
+  .division-assurance { gap: 2rem; }
+  .division-assurance-list li {
+    min-height: 0;
+    padding: 1.25rem 0;
+    grid-template-columns: 38px minmax(0, 1fr);
+  }
+  .division-assurance-list h3 { font-size: 1.15rem; }
+
+  .legal-main { padding-top: 102px; padding-bottom: 3.5rem; }
+  .legal-hero { margin-bottom: 2.2rem; }
+  .legal-hero h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
+  .legal-content { padding: 1.25rem; border-radius: 14px; }
+  .legal-content h2 { margin-top: 2rem; font-size: 1.25rem; }
+}
+
+@media (max-width: 390px) {
+  .site-header,
+  .site-header.is-scrolled { gap: .45rem; }
+  .brand,
+  .brand img { width: 90px; }
+  .theme-option { min-width: 29px; width: 29px; }
+  .mobile-nav summary { width: 42px; height: 42px; }
+  .hero h1 { font-size: clamp(2.2rem, 11.4vw, 2.8rem); }
+  .footer-columns { grid-template-columns: 1fr; }
+}
