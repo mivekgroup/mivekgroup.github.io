@@ -1702,3 +1702,168 @@ html[data-theme="dark"] .division-assurance { background: var(--paper); }
   .hero h1 { font-size: clamp(2.2rem, 11.4vw, 2.8rem); }
   .footer-columns { grid-template-columns: 1fr; }
 }
+
+/* === MIVEK FINAL TYPOGRAPHY SYSTEM === */
+/* Unified Inter typography across homepage, company pages and legal pages. */
+/* This block intentionally changes typography only, not the existing layout. */
+:root {
+  --font-primary: "Inter", Arial, sans-serif;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0;
+  font-synthesis: none;
+}
+
+/* Primary heading hierarchy */
+h1,
+h2,
+h3 {
+  font-family: var(--font-primary);
+  text-wrap: balance;
+}
+
+h1 {
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.018em;
+}
+
+/* Body and supporting copy */
+p,
+li,
+dd,
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-primary);
+}
+
+p,
+li,
+dd {
+  font-weight: 400;
+}
+
+.hero-lead,
+.hero > div > p:not(.eyebrow),
+.division-hero > div > p:not(.eyebrow),
+.about-copy .large-copy,
+.form-heading > p:last-child {
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+/* Navigation and interactive controls */
+.desktop-nav a,
+.mobile-nav nav a {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.button,
+.nav-button,
+.text-link,
+.company-card > a {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Labels, eyebrows and metadata */
+.eyebrow,
+.company-card-top p,
+.trust-strip p,
+.contact-grid span,
+.form-grid label > span,
+.division-hero aside > p,
+.footer-columns h2 {
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+
+/* Card and section headings */
+.portfolio-heading p,
+.company-card h3,
+.reason-list h3,
+.process-grid h3,
+.sectors-panel h3,
+.form-heading h3,
+.division-service-grid h3,
+.division-assurance-list h3,
+.legal-content h2,
+.legal-content h3 {
+  font-family: var(--font-primary);
+}
+
+.portfolio-heading p,
+.company-card h3,
+.reason-list h3,
+.process-grid h3,
+.sectors-panel h3,
+.form-heading h3,
+.division-service-grid h3,
+.division-assurance-list h3 {
+  font-weight: 700;
+}
+
+/* Emphasis */
+strong,
+b {
+  font-weight: 700;
+}
+
+/* Keep large statement copy strong without becoming visually heavy */
+.about-copy .large-copy,
+.story-card figcaption strong,
+.contact-grid strong {
+  letter-spacing: -0.018em;
+}
+
+/* Small text remains readable on compact screens */
+@media (max-width: 640px) {
+  body {
+    line-height: 1.62;
+  }
+
+  h1 {
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+  }
+
+  h2 {
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  h3 {
+    line-height: 1.22;
+  }
+
+  .hero-lead,
+  .division-hero > div > p:not(.eyebrow) {
+    line-height: 1.6;
+  }
+}
+/* === END MIVEK FINAL TYPOGRAPHY SYSTEM === */
