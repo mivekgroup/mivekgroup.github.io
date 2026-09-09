@@ -1867,3 +1867,224 @@ b {
   }
 }
 /* === END MIVEK FINAL TYPOGRAPHY SYSTEM === */
+
+/* === MIVEK TRUE FULL-SCREEN MOBILE FIX === */
+/*
+   Ensures the website always uses the phone's full CSS viewport width.
+   Also removes hidden horizontal overflow caused by decorative pseudo-elements
+   and the mobile menu living inside a backdrop-filtered fixed header.
+*/
+html {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --page-gutter: clamp(14px, 4vw, 20px);
+  }
+
+  html,
+  body {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    overflow-x: clip !important;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* The fixed header itself must span the exact viewport. */
+  .site-header,
+  .site-header.is-scrolled {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding-left: max(var(--page-gutter), env(safe-area-inset-left)) !important;
+    padding-right: max(var(--page-gutter), env(safe-area-inset-right)) !important;
+
+    /* backdrop-filter creates a containing block for the nested fixed menu
+       on some mobile browsers, which previously pushed the menu off-screen. */
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    filter: none !important;
+    transform: none !important;
+  }
+
+  /* Every outer page region is truly edge-to-edge. Internal content keeps
+     only a small responsive gutter for readability. */
+  main,
+  footer,
+  .hero,
+  .trust-strip,
+  .section,
+  .contact,
+  .site-footer,
+  .legal-main,
+  .division-hero,
+  .division-audience,
+  .division-cta,
+  .division-services,
+  .division-assurance {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  main {
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+    overflow-x: clip !important;
+  }
+
+  main > *,
+  footer,
+  .site-footer {
+    min-width: 0 !important;
+  }
+
+  /* Keep readable content padding while the section background fills screen. */
+  .hero,
+  .section,
+  .contact,
+  .site-footer,
+  .legal-main,
+  .division-hero,
+  .division-audience,
+  .division-cta,
+  .division-assurance {
+    padding-left: max(var(--page-gutter), env(safe-area-inset-left)) !important;
+    padding-right: max(var(--page-gutter), env(safe-area-inset-right)) !important;
+  }
+
+  .trust-strip {
+    padding-left: max(var(--page-gutter), env(safe-area-inset-left)) !important;
+    padding-right: max(var(--page-gutter), env(safe-area-inset-right)) !important;
+  }
+
+  /* Do not let grid/flex children impose desktop intrinsic widths. */
+  .hero > *,
+  .about > *,
+  .why-mivek > *,
+  .contact-layout > *,
+  .corporate-information-layout > *,
+  .credibility-commitment > *,
+  .division-hero > *,
+  .division-audience > *,
+  .division-assurance > *,
+  .footer-top > *,
+  .footer-columns > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  img,
+  picture,
+  video,
+  iframe,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
+  /* Closed details menus must contribute zero layout width. */
+  .mobile-nav:not([open]) nav {
+    display: none !important;
+  }
+
+  /* Open mobile menu is anchored to the viewport, not the menu button. */
+  .mobile-nav[open] nav {
+    display: grid !important;
+    position: fixed !important;
+    top: var(--header-height) !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    padding-left: max(var(--page-gutter), env(safe-area-inset-left)) !important;
+    padding-right: max(var(--page-gutter), env(safe-area-inset-right)) !important;
+  }
+
+  .mobile-nav[open] nav a,
+  .mobile-nav[open] nav .nav-button {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Decorative circles used to increase document scrollWidth beyond the
+     physical phone width. Their section now clips them safely. */
+  .hero,
+  .division-page .division-hero {
+    overflow-x: hidden !important;
+    overflow-x: clip !important;
+  }
+
+  .hero::after,
+  .division-page .division-hero::before {
+    max-width: 72vw;
+    max-height: 72vw;
+  }
+
+  /* Full-width forms/cards without accidental overflow. */
+  .portfolio-panel,
+  .company-grid,
+  .story-grid,
+  .values-grid,
+  .credibility-grid,
+  .corporate-details,
+  .process-grid,
+  .sectors-panel,
+  .opportunities,
+  .contact-layout,
+  .contact-grid,
+  .enquiry-form,
+  .form-grid,
+  .legal-content,
+  .division-page .division-service-grid,
+  .division-assurance-list {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .form-grid input,
+  .form-grid select,
+  .form-grid textarea {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 430px) {
+  :root { --page-gutter: 14px; }
+}
+
+@media (max-width: 360px) {
+  :root { --page-gutter: 12px; }
+}
+/* === END MIVEK TRUE FULL-SCREEN MOBILE FIX === */
